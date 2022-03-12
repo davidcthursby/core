@@ -62,8 +62,9 @@ if (isActionAccessible($guid, $connection2, '/modules/System Admin/systemSetting
 
     $setting = $settingGateway->getSettingByScope('System', 'indexText', true);
     $row = $form->addRow();
-        $row->addLabel($setting['name'], __($setting['nameDisplay']))->description(__($setting['description']));
-        $row->addTextArea($setting['name'])->setValue($setting['value'])->setRows(8)->required();
+        $column = $row->addColumn();
+        $column->addLabel($setting['name'], __($setting['nameDisplay']))->description(__($setting['description']));
+        $column->addEditor($setting['name'],$guid)->setValue($setting['value'])->setRows(15)->required();
 
     $installTypes = array(
         'Production' => __("Production"),

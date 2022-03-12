@@ -23,7 +23,7 @@ use Gibbon\Data\Validator;
 
 require_once '../../gibbon.php';
 
-$_POST = $container->get(Validator::class)->sanitize($_POST, ['indexText' => 'HTML', 'analytics' => 'RAW']);
+$_POST = $container->get(Validator::class)->sanitize($_POST, ['indexText' => 'RAW', 'analytics' => 'RAW']);
 include '../../config.php';
 
 // Module includes
